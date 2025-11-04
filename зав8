@@ -1,0 +1,18 @@
+# 8) Дійсний гірський масив
+def valid_mountain_array(arr):
+    n = len(arr)
+    if n < 3: return False
+    i = 0
+    # підйом
+    while i + 1 < n and arr[i] < arr[i + 1]:
+        i += 1
+    # вершина не на краях
+    if i == 0 or i == n - 1: return False
+    # спуск
+    while i + 1 < n and arr[i] > arr[i + 1]:
+        i += 1
+    return i == n - 1
+# Приклади:
+# print(valid_mountain_array([2,1]))      # False
+# print(valid_mountain_array([3,5,5]))    # False
+# print(valid_mountain_array([0,3,2,1]))  # True
