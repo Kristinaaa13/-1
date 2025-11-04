@@ -1,0 +1,8 @@
+# 2) Кількість чисел з парною кількістю цифр
+def count_even_digit_numbers(nums):
+    def digits(n: int) -> int:
+        return len(str(n))  # nums[i] >= 1 за умовою
+    return sum(digits(x) % 2 == 0 for x in nums)
+# Приклади:
+# print(count_even_digit_numbers([12,345,2,6,7896]))  # 2
+# print(count_even_digit_numbers([555,901,482,1771])) # 1
