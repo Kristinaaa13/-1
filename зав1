@@ -1,0 +1,15 @@
+# 1) Максимальна кількість поспіль ідучих 1
+def find_max_consecutive_ones(nums):
+    max_count = cur = 0
+    for x in nums:
+        if x == 1:
+            cur += 1
+            if cur > max_count: max_count = cur
+        else:
+            cur = 0
+    return max_count
+# Приклади:
+# print(find_max_consecutive_ones([1,1,0,1,1,1]))  # 3
+# print(find_max_consecutive_ones([1,0,1,1,0,1]))  # 2
+
+
