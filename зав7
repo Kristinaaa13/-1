@@ -1,0 +1,15 @@
+# 7) Перевірити, чи існують N і його подвійник
+def check_if_exist(arr):
+    s = set(arr)
+    for x in arr:
+        if 2 * x in s:
+            if x != 0 or arr.count(0) > 1:
+                return True
+        if x % 2 == 0 and (x // 2) in s:
+            if x != 0 or arr.count(0) > 1:
+                return True
+    return False
+# Оптимізація: щоб не рахувати нулі двічі, можна попередньо підрахувати count0 = arr.count(0)
+# Приклади:
+# print(check_if_exist([10,2,5,3]))  # True
+# print(check_if_exist([3,1,7,11]))  # False
